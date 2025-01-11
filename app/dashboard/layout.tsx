@@ -1,7 +1,15 @@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { DashboardNavigation } from "../components/DashboardNavigation";
 import { Button } from "@/components/ui/button";
-import { MenuIcon } from "lucide-react";
+import { CircleUser, MenuIcon } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function DashboardLayout({
   children,
@@ -30,6 +38,19 @@ export default function DashboardLayout({
             </nav>
           </SheetContent>
         </Sheet>
+
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button className="rounded-full" variant="secondary" size="icon">
+              <CircleUser className="size-5" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>Logout</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </header>
     </div>
   );
