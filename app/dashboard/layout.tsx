@@ -1,5 +1,5 @@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { DashboardNavigation } from "../components/DashboardNavigation";
+import { DashboardNavigation } from "../components/dashboard/DashboardNavigation";
 import { Button } from "@/components/ui/button";
 import { CircleUser, MenuIcon } from "lucide-react";
 import {
