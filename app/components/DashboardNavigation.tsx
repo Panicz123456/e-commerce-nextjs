@@ -30,7 +30,7 @@ export const DashboardNavigation = () => {
       {links.map((link) => (
         <Link
           key={link.name}
-          href={link.name}
+          href={link.href}
           className={cn(
             link.href === pathname
               ? "text-foreground"
