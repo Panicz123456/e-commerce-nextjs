@@ -1,10 +1,23 @@
-"use client"
+"use client";
 
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { useFormStatus } from "react-dom";
 
-export const SubmitButton = () => {
+interface iAppProps {
+  text: string;
+  variant?:
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "link"
+    | null
+    | undefined;
+}
+
+export const SubmitButton = ({ text, variant }: iAppProps) => {
   const { pending } = useFormStatus();
   return (
     <>
@@ -14,7 +27,9 @@ export const SubmitButton = () => {
           Please Wait
         </Button>
       ) : (
-        <Button type="submit">Create Product</Button>
+        <Button variant={variant} type="submit">
+          {text}
+        </Button>
       )}
     </>
   );
