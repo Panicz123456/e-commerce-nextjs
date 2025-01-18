@@ -1,9 +1,13 @@
-import { Navbar } from "../components/storefront/NavBar";
+import { CategorySelection } from "../components/storefront/CategortySelection";
+import { FeaturedProducts } from "../components/storefront/FeaturedProducts";
+import { Hero } from "../components/storefront/Hero";
 
 const IndexPage = () => {
   return (
     <div>
-      <h1>hello from the storefront</h1>
+      <Hero />
+      <CategorySelection />
+      <FeaturedProducts />
     </div>
   );
 };
