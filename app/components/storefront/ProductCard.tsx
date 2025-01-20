@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -51,11 +52,22 @@ export const ProductCard = ({ item }: iAppProps) => {
         {item.description}
       </p>
 
-
       <Button asChild className="w-full mt-5">
-        <Link href={`/product/${item.id}`}>
-        Learn More!</Link>
+        <Link href={`/product/${item.id}`}>Learn More!</Link>
       </Button>
+    </div>
+  );
+};
+
+export const LoadingProductCard = () => {
+  return (
+    <div className="flex flex-col">
+      <Skeleton className="w-full h-[330px]" />
+      <div className="flex flex-col mt-2 gap-y-2">
+        <Skeleton className="h-4 w-full" />
+        <Skeleton className="w-full h-6" />
+      </div>
+      <Skeleton className="w-full h-10 mt-5" />
     </div>
   );
 };
